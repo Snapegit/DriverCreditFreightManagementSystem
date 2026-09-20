@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.XiehuoDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.XiehuoEntity" id="xiehuoMap">
+        <result property="huowubianhao" column="huowubianhao"/>
+        <result property="huowumingcheng" column="huowumingcheng"/>
+        <result property="guige" column="guige"/>
+        <result property="huowushuliang" column="huowushuliang"/>
+        <result property="tupian" column="tupian"/>
+        <result property="huozhuzhanghao" column="huozhuzhanghao"/>
+        <result property="huozhushouji" column="huozhushouji"/>
+        <result property="huozhuxingming" column="huozhuxingming"/>
+        <result property="sijizhanghao" column="sijizhanghao"/>
+        <result property="sijishouji" column="sijishouji"/>
+        <result property="sijixingming" column="sijixingming"/>
+        <result property="chepaihao" column="chepaihao"/>
+        <result property="fahuodizhi" column="fahuodizhi"/>
+        <result property="songdadizhi" column="songdadizhi"/>
+        <result property="yujisongdashijian" column="yujisongdashijian"/>
+        <result property="jiedanriqi" column="jiedanriqi"/>
+        <result property="zhuangcheshijian" column="zhuangcheshijian"/>
+        <result property="kaishiyunshushijian" column="kaishiyunshushijian"/>
+        <result property="xiehuoshijian" column="xiehuoshijian"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.XiehuoView" >
+
+		SELECT  xiehuo.* FROM xiehuo  xiehuo 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.XiehuoView" >
+		SELECT * FROM xiehuo  xiehuo <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
